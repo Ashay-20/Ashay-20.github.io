@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashay Prashant Katrojwar - Resume</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
+        /* Global styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -27,10 +27,6 @@
             padding: 20px 0;
         }
 
-        header h1 {
-            margin: 0;
-        }
-
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -38,12 +34,6 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            animation: slideIn 1s;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
         }
 
         nav ul li {
@@ -69,37 +59,62 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        section h2 {
-            color: #007acc;
-            animation: growIn 1.5s;
-        }
-
-        @keyframes growIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
         footer {
             text-align: center;
             padding: 10px;
             background-color: #007acc;
             color: white;
-            position: relative;
             margin-top: 20px;
         }
 
         a {
-            color: #007acc;
-            text-decoration: none;
+            text-decoration: none; /* Remove underline from all links */
+            color: #007acc; /* Default color for links */
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #005f99;
+            color: #005f99; /* Darker shade for hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            section {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            header, footer {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            nav ul {
+                font-size: 90%;
+            }
+
+            section {
+                margin: 5px;
+                padding: 10px;
+            }
         }
 
         header p a {
