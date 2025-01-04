@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashay Prashant Katrojwar - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f9f9f9, #e8f4f8);
+            color: #333;
+            animation: fadeIn 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            text-align: center;
+            background-color: #007acc;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #005f99;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            animation: slideIn 1s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #007acc;
+            animation: growIn 1.5s;
+        }
+
+        @keyframes growIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007acc;
+            color: white;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007acc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #005f99;
+        }
+
+        header p a {
+            color: white; /* Ensures links in the header are white */
+        }
+
+        header p a:hover {
+            color: #ffcc00; /* Highlight on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ashay Prashant Katrojwar</h1>
+        <p>ashaykatrojwar12@gmail.com | <a href="http://www.linkedin.com/in/ashay-katrojwar-90841116a">LinkedIn</a> | <a href="https://www.kaggle.com/ashaykatrojwar">Kaggle</a> | <a href="https://github.com/Ashay-20">GitHub</a></p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Technical Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#achievements">Awards</a></li>
+        </ul>
+    </nav>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <h3>Accenture</h3>
+        <h4>Application Development Analyst: Mar 2024 - Present</h4>
+        <ul>
+            <li>Developed scalable data pipelines with Apache Beam to process unstructured data.</li>
+            <li>Implemented event-driven architecture using AWS SNS and SQS.</li>
+            <li>Designed and implemented a template-based model deployment microservice using Flask.</li>
+            <li>Developed solutions for extracting figures and tables from clinical research articles.</li>
+            <li>Digitized PDF documents into HTML format for accurate content conversion.</li>
+        </ul>
+        <h4>Application Development Associate: Nov 2022 - Feb 2024</h4>
+        <ul>
+            <li>Designed and developed RESTful microservices using Flask and FastAPI.</li>
+            <li>Created and deployed Flask APIs for seamless integration with cloud data sources.</li>
+            <li>Updated Python versions to ensure compatibility and stability.</li>
+            <li>Integrated ChatGPT/LLM for context-based interactions with clinical trial data.</li>
+            <li>Developed unit tests using Pytest framework.</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Programming Languages: Python</li>
+            <li>Web Frameworks: Flask, FastAPI</li>
+            <li>Databases: PostgreSQL, ElasticSearch</li>
+            <li>AWS Services: S3, SNS, SQS, RDS, Redshift</li>
+            <li>Others: Machine Learning, Docker, GitLab, Pytest</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <h3>Vishwakarma Institute of Information Technology, Pune</h3>
+        <p>Bachelor of Technology (B.Tech) in Mechanical Engineering</p>
+        <p>CGPA: 9.56/10 | Graduation: May 2022</p>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li><a href="https://www.credential.net/4165fe35-5ab2-44a7-b6b2-926411e7b2e9">Google - Cloud Digital Leader</a></li>
+            <li><a href="https://www.credly.com/badges/d28c8e59-41e0-488e-ba1f-69927bc523e9">Google - Professional Data Engineer</a></li>
+            <li><a href="https://courses.nvidia.com/certificates/5dbc88997b114787989c1d07c63ae05f/">Fundamentals of Deep Learning by Nvidia</a></li>
+            <li><a href="https://www.coursera.org/account/accomplishments/certificate/JNLUUGL5FPEF">Neural Networks and Deep Learning by deeplearning.ai</a></li>
+            <li><a href="https://www.freecodecamp.org/certification/ashay12/scientific-computing-with-python-v7">Scientific Computing with Python by Michigan University</a></li>
+            <li><a href="https://www.coursera.org/account/accomplishments/certificate/KS5P69MDPQGG">Improving Deep Neural Networks</a></li>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+            <li>
+                <h3>Investigation for Acoustic Performance Analysis of Stainless-Steel, Aluminum-Alloy, Epoxy-Glass Oil-Pan</h3>
+                <p><a href="https://doi.org/10.1016/j.matpr.2022.09.061">Materials Today: Proceedings</a> | August 2021</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="achievements">
+        <h2>Awards & Achievements</h2>
+        <ul>
+            <li>October 2022: Google Kaggle ML Research Spotlight Award for implementing Compact Convolutional Transformer ($1000 Prize).</li>
+            <li>September 2022: Google Kaggle ML Research Spotlight Award for implementing SAM optimizer algorithm in TensorFlow ($1000 Prize).</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ashay Prashant Katrojwar. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
