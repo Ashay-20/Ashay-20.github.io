@@ -480,6 +480,18 @@
     </section>
 
     <section id="publications">
+<script>
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+    </script>
 <footer>
         <p>&copy; 2025 Ashay Prashant Katrojwar. All Rights Reserved.</p>
     </footer>
