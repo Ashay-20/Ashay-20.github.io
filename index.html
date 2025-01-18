@@ -3,128 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id ="view" name="viewport"
-        content="width=device-width, initial-scale=1.0">
     <title>Ashay Prashant Katrojwar - Resume</title>
     <style>
         /* Global styles */
+       :root {
+            --primary-color: #373737;    
+            --secondary-color: #474747;  
+            --accent-color: #00b4d8;     
+            --text-color: #373737;
+            --background-gradient: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #f9f9f9, #e8f4f8);
-            color: #333;
-            animation: fadeIn 1.5s;
+            background: var(--background-gradient);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Animations */
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
+        @keyframes fadeInScale {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Styles */
         header {
-            text-align: center;
-            background-color: #007acc;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 20px 0;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: slideInFromTop 1s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        header a {
+            color: white !important;
+        }
+
+        /* Updated Navigation Styles */
+        nav {
+            background-color: var(--secondary-color);
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-            background-color: #005f99;
             margin: 0;
             display: flex;
             justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: white;
-            font-weight: bold;
-            transition: color 0.3s;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 500;
         }
 
         nav ul li a:hover {
-            color: #ffcc00;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
+        /* Sections */
         section {
-            padding: 20px;
-            margin: 20px;
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 2rem;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            animation: fadeInScale 0.6s ease forwards;
         }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #007acc;
-            color: white;
-            margin-top: 20px;
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
+        /* Headings */
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        /* Links */
         a {
-            text-decoration: none; /* Remove underline from all links */
-            color: #007acc; /* Default color for links */
-            transition: color 0.3s;
+            color: var(--primary-color);
+            text-decoration: none;
+            position: relative;
         }
 
         a:hover {
-            color: #005f99; /* Darker shade for hover */
+            color: var(--secondary-color);
         }
 
-        /* Responsive styles */
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        /* Experience Section */
+        #experience h4 {
+            color: var(--text-color);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        #experience ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #experience li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        #experience li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Skills Section */
+        #skills ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        #skills li {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #skills li strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.3rem;
+        }
+
+        #skills li span {
+            display: inline-block;
+            background: white;
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        #skills li span:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Education Section */
+        #education p {
+            margin: 0.5rem 0;
+        }
+
+        /* Certifications Section */
+        #certifications ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #certifications li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            transition: transform 0.2s ease;
+        }
+
+        #certifications li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Achievements Section */
+        #achievements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #achievements li {
+            padding: 1rem 1rem 1rem 1.5rem;
+            border-left: 3px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Publications Section */
+        #publications li {
+            padding: 1rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        #publications h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Mobile Responsive Design */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-toggle {
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+
             nav ul {
+                display: none;
+                width: 100%;
                 flex-direction: column;
-                padding: 10px;
+                align-items: center;
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
             }
 
             nav ul li {
-                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 0.8rem 1rem;
+                width: 100%;
             }
 
             section {
-                margin: 10px;
-                padding: 15px;
+                margin: 1rem;
+                padding: 1.5rem;
             }
 
-            header, footer {
-                padding: 15px;
+            #skills ul {
+                grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                font-size: 14px;
-            }
-
-            header h1 {
-                font-size: 20px;
-            }
-
-            nav ul {
-                font-size: 90%;
-            }
-
-            section {
-                margin: 5px;
-                padding: 10px;
-            }
-        }
-
-        header p a {
-            color: white; /* Ensures links in the header are white */
-        }
-
-        header p a:hover {
-            color: #ffcc00; /* Highlight on hover */
         }
     </style>
 </head>
@@ -135,6 +362,7 @@
     </header>
 
     <nav>
+        <button class="nav-toggle">☰</button>
         <ul>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Technical Skills</a></li>
@@ -167,14 +395,59 @@
         </ul>
     </section>
 
+    <section id="achievements">
+        <h2>Awards & Achievements</h2>
+        <ul>
+            <li><a href="https://www.kaggle.com/discussions/general/364167">October 2022: Google Kaggle ML Research Spotlight Award for implementing Compact Convolutional Transformer ($1000 Prize)</a></li>
+            <li><a href="https://www.kaggle.com/discussions/general/358450">September 2022: Google Kaggle ML Research Spotlight Award for implementing SAM optimizer algorithm in TensorFlow ($1000 Prize)</a></li>
+        </ul>
+    </section>
+
     <section id="skills">
         <h2>Technical Skills</h2>
         <ul>
-            <li>Programming Languages: Python, SQL </li>
-            <li>Frameworks: Flask, FastAPI, Pyspark, Apache Beam, Pytest.</li>
-            <li>Databases: PostgreSQL, ElasticSearch</li>
-            <li>AWS Services: S3, SNS, SQS, RDS, Redshift</li>
-            <li>Development Tools: Docker, Pycharm,Git </li>
+            <li>
+                <strong>Programming Languages</strong>
+                <div>
+                    <span>Python</span>
+                    <span>SQL</span>
+                </div>
+            </li>
+            <li>
+                <strong>Frameworks</strong>
+                <div>
+                    <span>Flask</span>
+                    <span>FastAPI</span>
+                    <span>Pyspark</span>
+                    <span>Apache Beam</span>
+                    <span>Pytest</span>
+                </div>
+            </li>
+            <li>
+                <strong>Databases</strong>
+                <div>
+                    <span>PostgreSQL</span>
+                    <span>ElasticSearch</span>
+                </div>
+            </li>
+            <li>
+                <strong>AWS Services</strong>
+                <div>
+                    <span>S3</span>
+                    <span>SNS</span>
+                    <span>SQS</span>
+                    <span>RDS</span>
+                    <span>Redshift</span>
+                </div>
+            </li>
+            <li>
+                <strong>Development Tools</strong>
+                <div>
+                    <span>Docker</span>
+                    <span>Pycharm</span>
+                    <span>Git</span>
+                </div>
+            </li>
         </ul>
     </section>
 
@@ -196,26 +469,18 @@
             <li><a href="https://www.coursera.org/account/accomplishments/certificate/KS5P69MDPQGG">Improving Deep Neural Networks</a></li>
         </ul>
     </section>
-
     <section id="publications">
         <h2>Publications</h2>
         <ul>
             <li>
-                <h3>Investigation for Acoustic Performance Analysis of Stainless-Steel, Aluminum-Alloy, Epoxy-Glass Oil-Pan</h3>
-                <p><a href="https://doi.org/10.1016/j.matpr.2022.09.061">Materials Today: Proceedings</a> | August 2021</p>
+                <h3><a href="https://doi.org/10.1016/j.matpr.2022.09.061">Investigation for Acoustic Performance Analysis of Stainless-Steel, Aluminum-Alloy, Epoxy-Glass Oil-Pan</a></h3>
+                <p>Materials Today: Proceedings | August 2021</p>
             </li>
         </ul>
     </section>
 
-    <section id="achievements">
-        <h2>Awards & Achievements</h2>
-        <ul>
-            <li>October 2022: Google Kaggle ML Research Spotlight Award for implementing Compact Convolutional Transformer ($1000 Prize).</li>
-            <li>September 2022: Google Kaggle ML Research Spotlight Award for implementing SAM optimizer algorithm in TensorFlow ($1000 Prize).</li>
-        </ul>
-    </section>
-
-    <footer>
+    <section id="publications">
+<footer>
         <p>&copy; 2025 Ashay Prashant Katrojwar. All Rights Reserved.</p>
     </footer>
 </body>
